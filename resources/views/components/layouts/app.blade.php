@@ -8,6 +8,15 @@
 
     <title>{{ $title ?? 'Page Title' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        Chart.defaults.font.family = "Victor Mono";
+        Chart.defaults.color = '#000';
+        Chart.defaults.plugins.legend.labels.usePointStyle = true;
+        Chart.defaults.plugins.legend.labels.padding = 18;
+        Chart.defaults.layout.padding = 0;
+    </script>
 </head>
 
 <body class="flex h-screen flex-col font-sans font-normal">
