@@ -1,0 +1,55 @@
+{
+    "candidates": [
+        { "id": 1, "name": "Guilherme Boulos", "party": "PSOL" },
+        { "id": 2, "name": "Ricardo Nunes", "party": "MDB" },
+        { "id": 3, "name": "Tabata Amaral", "party": "PSB" },
+        { "id": 4, "name": "Kim Kataguiri", "party": "UB" },
+        { "id": 5, "name": "Padre Kelmon", "party": "PRD" },
+        { "id": 6, "name": "Marina Helena", "party": "NOVO" },
+        { "id": 7, "name": "Ricardo Salles", "party": "PL" },
+        { "id": 8, "name": "Marco Vinholi", "party": "PSDB" }
+    ],
+    "results": null,
+    "pools": [
+        {
+            "org": "AtlasIntel",
+            "id": null,
+            "source": "https://www.poder360.com.br/pesquisas/boulos-lidera-corrida-a-prefeitura-de-sp-diz-pesquisa-atlas-intel/",
+            "date": "31/12/2023",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 29.5 },
+                    { "candidate_id": 2, "percentage": 18 },
+                    { "candidate_id": 3, "percentage": 6.2 },
+                    { "candidate_id": 4, "percentage": 5.3 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 0.6 },
+                    { "candidate_id": 7, "percentage": 17.6 },
+                    { "candidate_id": 8, "percentage": 0.8 }
+                ],
+                "nulls": 8,
+                "no_response": 14.1
+            }
+        },
+        {
+            "org": "RealTime Big Data",
+            "id": "SP-033963/2024",
+            "source": "https://www.estadao.com.br/politica/guilherme-boulos-34-intencoes-voto-ricardo-nunes-29-aponta-pesquisa-real-time-big-data-sao-paulo-eleicoes-2024-nprp/",
+            "date": "27/02/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 34 },
+                    { "candidate_id": 2, "percentage": 29 },
+                    { "candidate_id": 3, "percentage": 10 },
+                    { "candidate_id": 4, "percentage": 6 },
+                    { "candidate_id": 5, "percentage": 1 },
+                    { "candidate_id": 6, "percentage": 1 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 }
+                ],
+                "nulls": 10,
+                "no_response": 9
+            }
+        }
+    ]
+}
