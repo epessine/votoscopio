@@ -17,7 +17,7 @@ class City extends Component
     {
         $data = GetData::city($year, $state, $city);
 
-        abort_if(!$data, 404);
+        abort_if(! $data, 404);
 
         $this->data = $data;
     }
@@ -29,16 +29,19 @@ class City extends Component
             ->where('votes_estimulated')
             ->sortBy(fn (array $pool): Carbon => Carbon::createFromFormat('d/m/Y', $pool['date']));
 
-        $chart = Chart::chartjs()->line()->labels($pools->pluck('org'));
+        $chart = Chart::chartjs()
+            ->line()
+            ->labels($pools->map(fn (array $pool): string => $pool['org']
+                .' ('
+                .$pool['date']
+                .')'));
 
-        foreach ($this->data['candidates'] as $candidate) {
-            $data = $pools
+        collect($this->data['candidates'])
+            ->sortBy('name')
+            ->each(fn (array $candidate): ChartJs => $chart->series($candidate['name'], $pools
                 ->pluck('votes_estimulated.candidates')
                 ->map(fn (array $votes): float => collect($votes)
-                    ->firstWhere('candidate_id', $candidate['id'])['percentage'] ?? 0);
-
-            $chart->series($candidate['name'], $data);
-        }
+                    ->firstWhere('candidate_id', $candidate['id'])['percentage'] ?? 0)));
 
         return $chart;
     }
@@ -47,6 +50,6 @@ class City extends Component
     {
         return view('livewire.city')
             ->title("{$this->data['name']} - {$this->data['state']} ({$this->data['year']}) | "
-                . config('app.name'));
+                .config('app.name'));
     }
 }
