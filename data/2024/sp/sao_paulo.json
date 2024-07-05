@@ -7,7 +7,12 @@
         { "id": 5, "name": "Padre Kelmon", "party": "PRD" },
         { "id": 6, "name": "Marina Helena", "party": "NOVO" },
         { "id": 7, "name": "Ricardo Salles", "party": "PL" },
-        { "id": 8, "name": "Marco Vinholi", "party": "PSDB" }
+        { "id": 8, "name": "Marco Vinholi", "party": "PSDB" },
+        { "id": 9, "name": "Altino Prazeres", "party": "PSTU" },
+        { "id": 10, "name": "Pablo Marçal", "party": "PRTB" },
+        { "id": 11, "name": "José Luiz Datena", "party": "PSDB" },
+        { "id": 12, "name": "João Pimenta", "party": "PCO" },
+        { "id": 13, "name": "Ricardo Senese", "party": "UP" }
     ],
     "results": null,
     "pools": [
@@ -33,7 +38,7 @@
         },
         {
             "org": "RealTime Big Data",
-            "id": "SP-033963/2024",
+            "id": "SP-03963/2024",
             "source": "https://www.estadao.com.br/politica/guilherme-boulos-34-intencoes-voto-ricardo-nunes-29-aponta-pesquisa-real-time-big-data-sao-paulo-eleicoes-2024-nprp/",
             "date": "27/02/2024",
             "votes_estimulated": {
@@ -49,6 +54,188 @@
                 ],
                 "nulls": 10,
                 "no_response": 9
+            }
+        },
+        {
+            "org": "DataFolha",
+            "id": "SP-08862/2024",
+            "source": "https://g1.globo.com/sp/sao-paulo/eleicoes/2024/noticia/2024/03/11/datafolha-prefeitura-de-sp-11-marco.ghtml",
+            "date": "05/03/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 30 },
+                    { "candidate_id": 2, "percentage": 29 },
+                    { "candidate_id": 3, "percentage": 8 },
+                    { "candidate_id": 4, "percentage": 4 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 7 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 },
+                    { "candidate_id": 9, "percentage": 2 }
+                ],
+                "nulls": 14,
+                "no_response": 6
+            }
+        },
+        {
+            "org": "Instituto Paraná Pesquisas",
+            "id": "SP-05177/2024",
+            "source": "https://noticias.r7.com/sao-paulo/nunes-tem-32-e-boulos-301-a-prefeitura-de-sao-paulo-aponta-parana-pesquisas-19032024/",
+            "date": "13/03/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 30.1 },
+                    { "candidate_id": 2, "percentage": 32 },
+                    { "candidate_id": 3, "percentage": 9.6 },
+                    { "candidate_id": 4, "percentage": 5.7 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 5.9 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 },
+                    { "candidate_id": 9, "percentage": 0 }
+                ],
+                "nulls": 9.6,
+                "no_response": 6.1
+            }
+        },
+        {
+            "org": "Instituto Badra",
+            "id": "SP-09533/20244",
+            "source": "https://www.gazetasp.com.br/estado/gazeta-sai-na-frente-e-divulga-1a-pesquisa-a-prefeitura-de-sp-apos/1136445/",
+            "date": "10/04/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 17 },
+                    { "candidate_id": 2, "percentage": 26 },
+                    { "candidate_id": 3, "percentage": 10 },
+                    { "candidate_id": 4, "percentage": 2 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 4 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 },
+                    { "candidate_id": 9, "percentage": 1 },
+                    { "candidate_id": 10, "percentage": 4 }
+                ],
+                "nulls": 24,
+                "no_response": 12
+            }
+        },
+        {
+            "org": "AtlasIntel",
+            "id": "SP-00864/2024",
+            "source": "https://www.cnnbrasil.com.br/eleicoes/boulos-tem-356-e-nunes-337-diz-pesquisa-atlas-cnn-em-sp/",
+            "date": "18/04/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 35.6 },
+                    { "candidate_id": 2, "percentage": 33.7 },
+                    { "candidate_id": 3, "percentage": 14.7 },
+                    { "candidate_id": 4, "percentage": 9.4 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 3.5 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 },
+                    { "candidate_id": 9, "percentage": 0 },
+                    { "candidate_id": 10, "percentage": 0 }
+                ],
+                "nulls": 2.2,
+                "no_response": 0.9
+            }
+        },
+        {
+            "org": "Instituto Paraná Pesquisas",
+            "id": "SP-05530/2024",
+            "source": "https://www.gazetadopovo.com.br/eleicoes/2024/pesquisa-eleitoral/parana-pesquisas-sao-paulo-sp-maio-2024/",
+            "date": "26/04/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 25.7 },
+                    { "candidate_id": 2, "percentage": 27.3 },
+                    { "candidate_id": 3, "percentage": 8.2 },
+                    { "candidate_id": 4, "percentage": 4 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 3.6 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 },
+                    { "candidate_id": 9, "percentage": 0.3 },
+                    { "candidate_id": 10, "percentage": 2.3 },
+                    { "candidate_id": 11, "percentage": 15.3 }
+                ],
+                "nulls": 6.8,
+                "no_response": 6.7
+            }
+        },
+        {
+            "org": "AtlasIntel",
+            "id": "SP-05357/2024",
+            "source": "https://www.cnnbrasil.com.br/eleicoes/boulos-tem-372-nunes-205-marcal-104-e-tabata-99-diz-atlas-cnn-para-prefeitura-de-sp/",
+            "date": "22/05/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 37.2 },
+                    { "candidate_id": 2, "percentage": 20.5 },
+                    { "candidate_id": 3, "percentage": 9.9 },
+                    { "candidate_id": 4, "percentage": 7.9 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 0 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 },
+                    { "candidate_id": 9, "percentage": 0.5 },
+                    { "candidate_id": 10, "percentage": 10.4 },
+                    { "candidate_id": 11, "percentage": 7.9 }
+                ],
+                "nulls": 0.9,
+                "no_response": 1.4
+            }
+        },
+        {
+            "org": "DataFolha",
+            "id": "SP-08145/2024",
+            "source": "https://www1.folha.uol.com.br/poder/2024/05/datafolha-boulos-24-e-nunes-23-mantem-empate-na-corrida-eleitoral-de-sao-paulo.shtml",
+            "date": "23/05/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 24 },
+                    { "candidate_id": 2, "percentage": 23 },
+                    { "candidate_id": 3, "percentage": 8 },
+                    { "candidate_id": 4, "percentage": 4 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 4 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 },
+                    { "candidate_id": 9, "percentage": 1 },
+                    { "candidate_id": 10, "percentage": 7 },
+                    { "candidate_id": 11, "percentage": 8 },
+                    { "candidate_id": 12, "percentage": 1 },
+                    { "candidate_id": 13, "percentage": 1 }
+                ],
+                "nulls": 13,
+                "no_response": 5
+            }
+        },
+        {
+            "org": "Instituto Paraná Pesquisas",
+            "id": "SP-05645/2024",
+            "source": "https://www.cnnbrasil.com.br/eleicoes/eleicoes-2024-sp-parana-pesquisas-29-05-2024/",
+            "date": "23/05/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 24.2 },
+                    { "candidate_id": 2, "percentage": 28.1 },
+                    { "candidate_id": 3, "percentage": 9.1 },
+                    { "candidate_id": 4, "percentage": 3.4 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 3.2 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 },
+                    { "candidate_id": 9, "percentage": 0.5 },
+                    { "candidate_id": 10, "percentage": 5.1 },
+                    { "candidate_id": 11, "percentage": 12.1 },
+                    { "candidate_id": 12, "percentage": 0.1 },
+                    { "candidate_id": 13, "percentage": 0 }
+                ],
+                "nulls": 7.8,
+                "no_response": 6.2
             }
         }
     ]
