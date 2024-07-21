@@ -29,4 +29,11 @@ class Candidate extends Model
     {
         return $this->belongsToMany(Pool::class)->withPivot('percentage');
     }
+
+    public function votes(City $city): array
+    {
+        return $city->pools
+            ->map(fn (Pool $pool): float => $pool->candidates->find($this->id)->pivot->percentage)
+            ->all();
+    }
 }
