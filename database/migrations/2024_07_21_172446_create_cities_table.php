@@ -13,8 +13,11 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->integer('code')->unique();
             $table->string('name');
+            $table->string('slug');
             $table->enum('state', array_column(State::cases(), 'value'));
             $table->timestamps();
+
+            $table->unique(['slug', 'state']);
         });
     }
 

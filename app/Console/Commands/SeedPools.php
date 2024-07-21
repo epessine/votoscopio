@@ -31,6 +31,7 @@ class SeedPools extends Command
                     /** @var City */
                     $city = City::query()->create([
                         'name' => $cityData['name'],
+                        'slug' => str(($cityData['name']))->slug(),
                         'code' => $cityData['code'],
                         'state' => State::from($state),
                     ]);

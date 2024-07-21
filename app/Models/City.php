@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $id
  * @property int $code
  * @property string $name
+ * @property string $slug
  * @property State $state
  * @property Carbon $created_at
  * @property Carbon $updated_at

@@ -15,6 +15,7 @@ class CityFactory extends Factory
         return [
             'code' => fake()->unique()->randomNumber(7, true),
             'name' => fake()->city(),
+            'slug' => fn (array $attrs): string => str($attrs['name'])->slug(),
             'state' => fake()->randomElement(State::cases()),
         ];
     }
