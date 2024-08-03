@@ -54,8 +54,6 @@ class CityPage extends Component
 
     public function render()
     {
-        return view('livewire.city-page')
-            ->title("{$this->city->name} - {$this->city->state->value} ({$this->year}) | "
-                .config('app.name'));
+        return view('livewire.city-page');
     }
 }
