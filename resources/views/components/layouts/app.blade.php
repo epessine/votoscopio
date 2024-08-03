@@ -27,6 +27,8 @@
     <main class="flex-1">
         {{ $slot }}
     </main>
+
+    @stack('scripts')
 </body>
 
 </html>
