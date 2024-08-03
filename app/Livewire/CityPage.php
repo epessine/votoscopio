@@ -38,7 +38,7 @@ class CityPage extends Component
     #[Axis]
     public function estimulatedVotes(): ChartJs
     {
-        $labels = $this->city->pools->map(fn (Pool $pool): string => "{$pool->organization} ({$pool->date})");
+        $labels = $this->city->pools->map(fn (Pool $pool): string => "{$pool->organization} ({$pool->date->toDateString()})");
 
         $chart = Chart::chartjs()
             ->line()
