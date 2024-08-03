@@ -8,6 +8,7 @@ use App\Models\City;
 use App\Models\Pool;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class SeedPools extends Command
 {
@@ -17,60 +18,70 @@ class SeedPools extends Command
 
     public function handle(): int
     {
-        $years = $this->scandir('pools');
+        $start = now();
 
-        foreach ($years as $year) {
-            $states = $this->scandir("pools/$year");
+        $this->info('Seeding pools...');
 
-            foreach ($states as $state) {
-                $cities = $this->scandir("pools/$year/$state");
+        $this->callSilently('migrate:fresh', ['--force']);
 
-                foreach ($cities as $city) {
-                    $cityData = json_decode(file_get_contents(database_path("pools/$year/$state/$city")), true);
+        DB::transaction(function (): void {
+            $years = $this->scandir('pools');
 
-                    /** @var City */
-                    $city = City::query()->create([
-                        'name' => $cityData['name'],
-                        'slug' => str(($cityData['name']))->slug(),
-                        'code' => $cityData['code'],
-                        'state' => State::from($state),
-                    ]);
+            foreach ($years as $year) {
+                $states = $this->scandir("pools/$year");
 
-                    /** @var Pool[] */
-                    $pools = [];
+                foreach ($states as $state) {
+                    $cities = $this->scandir("pools/$year/$state");
 
-                    foreach ($cityData['pools'] as $pool) {
-                        $pools[] = Pool::query()->create([
-                            'city_id' => $city->id,
-                            'organization' => $pool['org'],
-                            'code' => $pool['id'],
-                            'source' => $pool['source'],
-                            'date' => Carbon::createFromFormat('d/m/Y', $pool['date']),
-                            'nulls' => $pool['votes_estimulated']['nulls'],
-                            'no_response' => $pool['votes_estimulated']['no_response'],
-                            'year' => $year,
-                        ]);
-                    }
+                    foreach ($cities as $city) {
+                        $cityData = json_decode(file_get_contents(database_path("pools/$year/$state/$city")), true);
 
-                    foreach ($cityData['candidates'] as $rawCandidate) {
-                        /** @var Candidate */
-                        $candidate = Candidate::query()->create([
-                            'name' => $rawCandidate['name'],
-                            'party' => $rawCandidate['party'],
-                            'year' => $year,
+                        /** @var City */
+                        $city = City::query()->create([
+                            'name' => $cityData['name'],
+                            'slug' => str(($cityData['name']))->slug(),
+                            'code' => $cityData['code'],
+                            'state' => State::from($state),
                         ]);
 
-                        foreach ($cityData['pools'] as $index => $rawPool) {
-                            /** @var float */
-                            $percentage = collect($rawPool['votes_estimulated']['candidates'])
-                                ->firstWhere('candidate_id', $rawCandidate['id'])['percentage'] ?? 0;
+                        /** @var Pool[] */
+                        $pools = [];
 
-                            $candidate->pools()->attach($pools[$index], ['percentage' => $percentage]);
+                        foreach ($cityData['pools'] as $pool) {
+                            $pools[] = Pool::query()->create([
+                                'city_id' => $city->id,
+                                'organization' => $pool['org'],
+                                'code' => $pool['id'],
+                                'source' => $pool['source'],
+                                'date' => Carbon::createFromFormat('d/m/Y', $pool['date']),
+                                'nulls' => $pool['votes_estimulated']['nulls'],
+                                'no_response' => $pool['votes_estimulated']['no_response'],
+                                'year' => $year,
+                            ]);
+                        }
+
+                        foreach ($cityData['candidates'] as $rawCandidate) {
+                            /** @var Candidate */
+                            $candidate = Candidate::query()->create([
+                                'name' => $rawCandidate['name'],
+                                'party' => $rawCandidate['party'],
+                                'year' => $year,
+                            ]);
+
+                            foreach ($cityData['pools'] as $index => $rawPool) {
+                                /** @var float */
+                                $percentage = collect($rawPool['votes_estimulated']['candidates'])
+                                    ->firstWhere('candidate_id', $rawCandidate['id'])['percentage'] ?? 0;
+
+                                $candidate->pools()->attach($pools[$index], ['percentage' => $percentage]);
+                            }
                         }
                     }
                 }
             }
-        }
+        });
+
+        $this->info(__('Pools seeded in :timems', ['time' => now()->diffInMilliseconds($start, true)]));
 
         return self::SUCCESS;
     }
