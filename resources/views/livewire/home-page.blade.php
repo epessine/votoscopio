@@ -25,7 +25,7 @@
                 id="state-select">
                 <option value="">...</option>
                 @foreach ($this->states as $state)
-                    <option value="{{ $state }}">{{ strtoupper($state) }}</option>
+                    <option value="{{ $state->value }}">{{ strtoupper($state->value) }}</option>
                 @endforeach
             </select>
         </div>
@@ -37,7 +37,7 @@
                 id="city-select">
                 <option value="">...</option>
                 @foreach ($this->cities as $city)
-                    <option value="{{ $city }}">{{ $city }}</option>
+                    <option value="{{ $city['slug'] }}">{{ $city['name'] }}</option>
                 @endforeach
             </select>
         </div>

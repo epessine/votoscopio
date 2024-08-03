@@ -2,7 +2,8 @@
 
 namespace App\Livewire;
 
-use App\Support\GetData;
+use App\Models\City;
+use App\Models\Pool;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 
@@ -11,7 +12,7 @@ use Livewire\Component;
  * @property-read array $states
  * @property-read array $cities
  */
-class Home extends Component
+class HomePage extends Component
 {
     public string $year = '';
 
@@ -22,14 +23,23 @@ class Home extends Component
     #[Computed]
     public function years(): array
     {
-        return GetData::years();
+        return Pool::query()
+            ->distinct('year')
+            ->orderBy('year')
+            ->pluck('year')
+            ->all();
     }
 
     #[Computed]
     public function states(): array
     {
         if (isset($this->year)) {
-            return GetData::states($this->year);
+            return City::query()
+                ->distinct('state')
+                ->whereRelation('pools', 'year', $this->year)
+                ->orderBy('state')
+                ->pluck('state')
+                ->all();
         }
 
         return [];
@@ -39,7 +49,12 @@ class Home extends Component
     public function cities(): array
     {
         if (isset($this->year) && isset($this->state)) {
-            return GetData::cities($this->year, $this->state);
+            return City::query()
+                ->where('state', $this->state)
+                ->whereRelation('pools', 'year', $this->year)
+                ->orderBy('name')
+                ->get()
+                ->all();
         }
 
         return [];
@@ -54,14 +69,14 @@ class Home extends Component
         ]);
 
         $this->redirectRoute(
-            'view-data',
-            [$this->year, $this->state, str($this->city)->slug()->toString()],
+            'city-page',
+            [$this->year, $this->state, $this->city],
             navigate: true,
         );
     }
 
     public function render()
     {
-        return view('livewire.home')->title(config('app.name'));
+        return view('livewire.home-page');
     }
 }
