@@ -1,9 +1,13 @@
 <?php
 
 use App\Livewire\CityPage;
-use App\Livewire\Home;
+use App\Livewire\HomePage;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomePage::class)->name('home-page');
 
-Route::get('/{year}/{state}/{citySlug}', CityPage::class)->name('view-data');
+Route::view('/about', 'about')->name('about');
+
+Route::view('/contribute', 'contribute')->name('contribute');
+
+Route::get('/{year}/{state}/{citySlug}', CityPage::class)->name('city-page');

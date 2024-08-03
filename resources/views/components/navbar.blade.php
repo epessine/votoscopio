@@ -4,10 +4,10 @@
             <a wire:navigate href="{{ route('home-page') }}">início</a>
         </li>
         <li class="transition-all duration-150 hover:font-extrabold">
-            <a href="#">contribua</a>
+            <a wire:navigate href="{{ route('contribute') }}">contribua</a>
         </li>
         <li class="transition-all duration-150 hover:font-extrabold">
-            <a href="#">sobre</a>
+            <a wire:navigate href="{{ route('about') }}">sobre</a>
         </li>
     </ul>
 </nav>
