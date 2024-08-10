@@ -5,20 +5,7 @@ WORKDIR /usr/src/votoscopio
 COPY . .
 
 RUN npm ci
-
 RUN npm run build
-
-FROM php:8.3 AS app
-
-COPY --from=composer /usr/bin/composer /usr/bin/composer
-
-WORKDIR /usr/src/votoscopio
-
-FROM app AS dependencies
-
-COPY --from=builder /usr/src/votoscopio .
-
-RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 FROM dunglas/frankenphp:php8.3 AS extensions
 
@@ -33,10 +20,10 @@ RUN install-php-extensions \
 
 FROM extensions AS final
 
-COPY --from=dependencies /usr/src/votoscopio /app
+COPY --from=builder /usr/src/votoscopio /app
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 RUN php artisan migrate:fresh --force
-
 RUN php artisan app:seed-pools
-
 RUN php artisan optimize

@@ -15,7 +15,7 @@ echo
 echo "Rebuilding image ..."
 echo
 
-docker buildx build --no-cache-filter builder,dependencies,final --tag 'epessine/votoscopio' .
+docker buildx build --no-cache-filter builder,final --tag 'epessine/votoscopio' .
 
 docker rm -f votoscopio
 
