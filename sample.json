@@ -1,0 +1,24 @@
+{
+    "name": "",
+    "code": 0,
+    "candidates": [
+        { "id": 1, "name": "", "party": "" },
+        { "id": 2, "name": "", "party": "" }
+    ],
+    "pools": [
+        {
+            "org": "",
+            "id": "",
+            "source": "",
+            "date": "00/00/0000",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 0 },
+                    { "candidate_id": 1, "percentage": 0 }
+                ],
+                "nulls": 0,
+                "no_response": 0
+            }
+        }
+    ]
+}
