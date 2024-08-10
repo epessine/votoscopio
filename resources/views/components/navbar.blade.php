@@ -1,4 +1,4 @@
-<nav class="bg-black px-5 py-2 font-mono text-white shadow-white drop-shadow fixed w-screen">
+<nav class="bg-black px-5 py-2 font-mono text-white shadow-white drop-shadow fixed w-screen z-50">
     <ul class="flex justify-start gap-7">
         <li class="transition-all duration-150 hover:font-extrabold">
             <a wire:navigate href="{{ route('home-page') }}">início</a>

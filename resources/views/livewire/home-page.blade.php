@@ -1,10 +1,10 @@
-<div class="flex h-full w-full flex-col items-center justify-center gap-5">
+<div class="flex h-full w-full flex-col items-center justify-center gap-5 text-center px-10">
     <img class="w-64 filter"
         src="{{ Vite::asset('resources/images/urna-eletronica.jpeg') }}"
         alt="">
     <h1 class="font-sans text-6xl font-bold drop-shadow">{{ config('app.name') }}</h1>
     <h2 class="font-mono font-normal drop-shadow">@lang('um olhar atento sobre o processo eleitoral, em números')</h2>
-    <div class="flex items-center justify-between gap-5 font-mono font-normal drop-shadow">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-5 font-mono font-normal drop-shadow">
         <div>
             <label for="year-select">ano:</label>
             <select wire:model.live="year"

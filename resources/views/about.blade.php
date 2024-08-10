@@ -1,5 +1,5 @@
 <x-layouts.app :title="'sobre | ' . config('app.name')">
-    <div class="flex h-full w-full flex-col items-center justify-center gap-12"">
+    <div class="flex h-full w-full flex-col items-center justify-center gap-12 text-center px-10">
         <section class="flex flex-col items-center gap-4">
             <h1 class="text-4xl font-bold underline drop-shadow-sm">autor</h1>
             <h2 class="text-3xl font-bold drop-shadow-sm">Eduardo Pessine</h2>
