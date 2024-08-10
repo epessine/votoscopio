@@ -22,10 +22,6 @@ class SeedPools extends Command
 
         $this->info('Seeding pools...');
 
-        if (! DB::transactionLevel()) {
-            $this->callSilently('migrate:fresh', ['--force']);
-        }
-
         DB::transaction(function (): void {
             $years = $this->scandir('pools');
 
