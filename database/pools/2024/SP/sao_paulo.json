@@ -14,7 +14,8 @@
         { "id": 10, "name": "Pablo Marçal", "party": "PRTB" },
         { "id": 11, "name": "José Luiz Datena", "party": "PSDB" },
         { "id": 12, "name": "João Pimenta", "party": "PCO" },
-        { "id": 13, "name": "Ricardo Senese", "party": "UP" }
+        { "id": 13, "name": "Ricardo Senese", "party": "UP" },
+        { "id": 14, "name": "Fernando Fantauzzi", "party": "DC" }
     ],
     "results": null,
     "pools": [
@@ -238,6 +239,32 @@
                 ],
                 "nulls": 7.8,
                 "no_response": 6.2
+            }
+        },
+        {
+            "org": "DataFolha",
+            "id": "SP-09574/2024",
+            "source": "https://www.gazetadopovo.com.br/eleicoes/2024/pesquisa-eleitoral/datafolha-sao-paulo-sp-julho-2024/",
+            "date": "28/06/2024",
+            "votes_estimulated": {
+                "candidates": [
+                    { "candidate_id": 1, "percentage": 24 },
+                    { "candidate_id": 2, "percentage": 23 },
+                    { "candidate_id": 3, "percentage": 8 },
+                    { "candidate_id": 4, "percentage": 4 },
+                    { "candidate_id": 5, "percentage": 0 },
+                    { "candidate_id": 6, "percentage": 4 },
+                    { "candidate_id": 7, "percentage": 0 },
+                    { "candidate_id": 8, "percentage": 0 },
+                    { "candidate_id": 9, "percentage": 1 },
+                    { "candidate_id": 10, "percentage": 7 },
+                    { "candidate_id": 11, "percentage": 8 },
+                    { "candidate_id": 12, "percentage": 1 },
+                    { "candidate_id": 13, "percentage": 1 },
+                    { "candidate_id": 14, "percentage": 1 }
+                ],
+                "nulls": 13,
+                "no_response": 5
             }
         }
     ]
