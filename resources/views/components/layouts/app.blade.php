@@ -19,6 +19,7 @@
         Chart.defaults.elements.line.borderWidth = 2;
         Chart.defaults.elements.point.radius = 2.5;
         Chart.defaults.scale.ticks.display = false;
+        Chart.defaults.scales.linear.ticks.display = true;
     </script>
 </head>
 
