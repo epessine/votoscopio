@@ -19,7 +19,7 @@ docker buildx build --no-cache-filter builder,final --tag 'epessine/votoscopio' 
 
 docker rm -f votoscopio
 
-docker run -d -p 80:80 -p 443:443 -p 443:443/udp --restart=always --env-file .env --name votoscopio epessine/votoscopio
+docker run -d -p 80:80 -p 443:443 -p 443:443/udp -v ./.docker/data:/data -v ./.docker/config:/config --restart=always --env-file .env --name votoscopio epessine/votoscopio
 
 docker image prune -f
 
