@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://votoscópio.com.br" target="_blank">votoscópio</a></h1>
+<h1 align="center"><a href="https://votoscopio.com.br" target="_blank">votoscópio</a></h1>
 <p align="center">
     <a href="https://github.com/epessine/votoscopio/actions"><img alt="GitHub Workflow Status (main)" src="https://github.com/epessine/votoscopio/actions/workflows/tests.yml/badge.svg"></a>
 </p>
@@ -11,9 +11,9 @@
 
 <p>esse projeto visa criar um compilado de informações sobre as pesquisas eleitorais brasileiras e demonstrar os resultados através de gráficos.</p>
 
-<a href="https://votoscópio.com.br/contribua" target="_blank">clique aqui</a> para obter informações de como contribuir com o projeto.
+<a href="https://votoscopio.com.br/contribute" target="_blank">clique aqui</a> para obter informações de como contribuir com o projeto.
 
-<a href="https://votoscópio.com.br/contribua" target="_blank">clique aqui</a> para saber mais sobre as ferramentas utilizadas para construir este projeto.
+<a href="https://votoscopio.com.br/about" target="_blank">clique aqui</a> para saber mais sobre as ferramentas utilizadas para construir este projeto.
 
 https://github.com/epessine/axis </br>
 https://github.com/livewire/livewire </br>
