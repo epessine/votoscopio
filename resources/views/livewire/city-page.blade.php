@@ -29,11 +29,12 @@
             <ul class="text-left">
                 @foreach ($city->pools as $pool)
                     <li class="ml-3 list-decimal">
-                        <span class="inline-block max-w-[90%] truncate sm:max-w-[unset]">{{ $pool->organization }}
+                        <span
+                              class="inline-block max-w-[90%] truncate align-middle sm:max-w-[unset]">{{ $pool->organization }}
                             ({{ $pool->date->toDateString() }})
                         </span>
                         <a target="_blank" href="{{ $pool->source }}" class="text-sm text-blue-600 underline">
-                            <svg class="-ml-1 mb-0.5 inline w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            <svg class="-ml-1 inline w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
                                  viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                       d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
